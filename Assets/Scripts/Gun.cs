@@ -5,6 +5,8 @@ using GoogleVR;
 
 public class Gun : MonoBehaviour {
 
+	//kaikki public koska saa helposti näkymään inspectorissa, voi sitten sieltä säädellä eikä tarvitse etsiä koodilla kaikkea :)
+
 	//parts etc
 	public Transform arm;
 	public Transform barrelEnd;
@@ -39,6 +41,7 @@ public class Gun : MonoBehaviour {
 	}
 
 	void UpdateGunPos(){
+		//semmone pieni sway vois olla kiva :)?
 		arm.rotation = GvrControllerInput.Orientation;
 	}
 
@@ -48,8 +51,10 @@ public class Gun : MonoBehaviour {
 		myAs.volume = Random.Range (0.9f, 1f);
 	}
 
+	//TODO, rekyyli
+	//esim jokasella shootilla nostetaan hiukan x rotation, ja sitten palautetaan se normi asentoon vaikka UpdateGunPos()ssisa
 	void Shoot(){
-		gunAC.SetTrigger ("Shoot");
+		gunAC.SetTrigger ("Shoot"); 
 		gunPS.Play ();
 		shellPS.Play ();
 		UpdateAudio ();
@@ -61,9 +66,9 @@ public class Gun : MonoBehaviour {
 	void FireRay(){
 		Ray ray = new Ray(barrelEnd.position, barrelEnd.TransformDirection(Vector3.forward));
 		RaycastHit hit;
-		if(Physics.Raycast(ray, out hit, 100)){
-			if (hit.collider.tag == "Target") {
-				hit.rigidbody.AddForceAtPosition (ray.direction * 100, hit.point);
+		if(Physics.Raycast(ray, out hit, 100)){ //ammutaan ray tässä ja tallennetaan osuma hittiin
+			if (hit.collider.tag == "Target") { //jos osuttu collider on tagia "Target"
+				hit.rigidbody.AddForceAtPosition (ray.direction * 100, hit.point); //tökkästään osuttua gameobjectia ray:n suuntaan.
 			}
 		}
 	}
