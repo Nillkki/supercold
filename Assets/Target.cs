@@ -27,6 +27,6 @@ public class Target : MonoBehaviour {
 	public void GetHit(){
 		myAs.PlayOneShot (hitSound);
 		ChangeColor (deadColor);
-		LeanPool.Despawn (transform.parent, 2f);
+		LeanPool.Despawn (transform.parent, 1f);
 	}
 }

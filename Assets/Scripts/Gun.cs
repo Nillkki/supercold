@@ -55,7 +55,6 @@ public class Gun : MonoBehaviour {
 		RaycastHit hit;
 		if(Physics.Raycast(ray, out hit, 32)) {
 			if (hit.collider.tag == "Target") {
-				//bullet speed?
 				hit.rigidbody.AddForceAtPosition (ray.direction * 250, hit.point);
 				hit.transform.GetComponent<Target> ().GetHit ();
 			}
