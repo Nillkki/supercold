@@ -37,7 +37,7 @@ public class Gun : MonoBehaviour {
 
 	void UpdateAudio(){
 		myAs.pitch = Random.Range (0.9f, 1.1f);
-		myAs.volume = Random.Range (0.9f, 1f);
+		myAs.volume = Random.Range (0.5f, 0.6f);
 	}
 
 	//TODO, rekyyli?
