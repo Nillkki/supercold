@@ -57,7 +57,6 @@ public class Gun : MonoBehaviour {
 			if (hit.collider.tag == "Target") {
 				hit.rigidbody.AddForceAtPosition (ray.direction * 250, hit.point);
 				hit.transform.GetComponent<Target> ().GetHit ();
-
 			}
 		}
 	}
