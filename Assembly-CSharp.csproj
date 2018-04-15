@@ -165,7 +165,7 @@
      <Compile Include="Assets\LeanPool\Scripts\LeanPoolable.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Gun.cs" />
-     <Compile Include="Assets\Target.cs" />
+     <Compile Include="Assets\Scripts\Target.cs" />
      <None Include="Assets\GoogleVR\Shaders\GvrUIOverlayFont.shader" />
      <None Include="Assets\LeanPool\Examples\Fonts\OFL.txt" />
      <None Include="Assets\LeanPool\Examples\Shaders\Skybox.shader" />
